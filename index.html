@@ -1,31 +1,13 @@
+<!DOCTYPE html>
 <HTML>
-<head>
+	<head>
+	</head>
 	<body>
-		<canvas id="mycanvas" wight="600" height=250> </canvas>
-		<img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Yang_yang_panda.JPG"
-	height="200"
-	width="200">
-	<script>
-		funcition invertColor(img){
-			var canvas=document.getElementById("mycanvas");
-			var context=canvas.getContext("2d");
-			// draw image at top-left corner
-			context.drawImage(img,0,0);
-			// draw original image right beside the previous image
-			context.drawImage(img,img.width,0);
-			// get ImageData object from the left image
-			var imageData=context.getImageData(100,100,img.width,img.height);
-			var data=imageData.data;
-			for (var i=0;i<data.lenght;i+=4){
-				data[i]=255-data[i];//red
-				data[i+1]=255-data[i+1];//green
-				data[i+2]=255-data[i+2];
-				data[i+3]=255-data[i+3];
-			}
-			context.putImageData(imageData,0,0)
-
-		}
-		invertColor(this);
-	</script>
-</head>
+		<video src="https://www.w3schools.com/tags/movie.mp4" 
+			width =320
+			height=240
+			controls
+			type ="video/mp4" />
+		</video>
+	</body>
 </HTML>
